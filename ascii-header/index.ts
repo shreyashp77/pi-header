@@ -5,9 +5,9 @@
  * along with model info, session details, and timestamp — all styled with theme colors.
  *
  * Usage:
- *   /ascii style <name>  — switch art style (symbol | classic)
- *   /ascii clear         — hide the header
- *   /ascii show          — show the header again
+ *   /header style <name>  — switch art style (symbol | classic)
+ *   /header clear         — hide the header
+ *   /header show          — show the header again
  */
 
 import type { ExtensionAPI, ExtensionContext } from "@earendil-works/pi-coding-agent";
@@ -161,9 +161,9 @@ let currentStyleName = "symbol";
 let activeHeader: { close: () => void; requestRender: () => void } | undefined;
 
 export default function asciiHeaderExtension(pi: ExtensionAPI): void {
-  // ── /ascii command ──────────────────────────────────────────────────────────
-  pi.registerCommand("ascii", {
-    description: "Manage ASCII header (style, show, clear)",
+  // ── /header command ─────────────────────────────────────────────────────────
+  pi.registerCommand("header", {
+    description: "Manage header (style, show, clear)",
     handler: async (args: string, ctx: ExtensionContext) => {
       const parts = args.trim().split(/\s+/);
       const subcommand = parts[0]?.toLowerCase();
@@ -171,7 +171,7 @@ export default function asciiHeaderExtension(pi: ExtensionAPI): void {
 
       if (!subcommand || subcommand === "help") {
         ctx.ui.notify(
-          "Usage:\n  /ascii style <name>  — switch art style\n  /ascii clear         — hide header\n  /ascii show          — show header",
+          "Usage:\n  /header style <name>  — switch art style\n  /header clear         — hide header\n  /header show          — show header",
           "info",
         );
         return;
@@ -215,7 +215,7 @@ export default function asciiHeaderExtension(pi: ExtensionAPI): void {
         return;
       }
 
-      ctx.ui.notify(`Unknown subcommand: ${subcommand}. Try /ascii help`, "warning");
+      ctx.ui.notify(`Unknown subcommand: ${subcommand}. Try /header help`, "warning");
     },
   });
 
