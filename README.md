@@ -13,7 +13,7 @@ A [pi](https://pi.dev) coding agent extension that displays a styled ASCII art h
 ## Installation
 
 ```bash
-pi install npm:@shreyashp77/pi-header
+pi install npm:pi-header
 ```
 
 ## Usage
