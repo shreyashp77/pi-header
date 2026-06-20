@@ -1,13 +1,13 @@
 {
   "name": "pi-header",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A pi coding agent extension that displays a styled ASCII art header with model info at the top of every new session.",
   "keywords": [
     "pi-package"
   ],
   "pi": {
     "extensions": [
-      "./pi-header"
+      "./extensions"
     ]
   },
   "peerDependencies": {
