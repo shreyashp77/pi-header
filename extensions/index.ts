@@ -157,7 +157,7 @@ class AsciiHeader implements Component {
 // ─── Extension ─────────────────────────────────────────────────────────────────────
 
 // Default style name
-let currentStyleName = "symbol";
+let currentStyleName = "classic";
 let activeHeader: { close: () => void; requestRender: () => void } | undefined;
 
 export default function piHeaderExtension(pi: ExtensionAPI): void {
