@@ -87,7 +87,7 @@ function getFormattedDate(): string {
 interface HeaderState {
   styleName: string;
   theme: Theme;
-  modelId?: string;
+  modelName?: string;
   leafId?: string;
   sessionBasename?: string;
   cachedWidth?: number;
@@ -129,7 +129,7 @@ class AsciiHeader implements Component {
     // Session info
     const dateStr = getFormattedDate();
     const infoParts: string[] = [];
-    if (this.state.modelId) infoParts.push(this.state.theme.fg("accent", this.state.modelId));
+    if (this.state.modelName) infoParts.push(this.state.theme.fg("accent", this.state.modelName));
     const infoStr = infoParts.join("  │  ");
     if (infoStr) {
       lines.push(
@@ -230,7 +230,7 @@ export default function piHeaderExtension(pi: ExtensionAPI): void {
 // ─── Helpers ───────────────────────────────────────────────────────────────────────
 
 function showHeader(ctx: ExtensionContext, styleName: string): void {
-  const modelId = ctx.model?.id;
+  const modelName = ctx.model?.name;
   const leafId = ctx.sessionManager.getLeafId();
   const sessionFile = ctx.sessionManager.getSessionFile();
   const sessionBasename = sessionFile ? sessionFile.split("/").pop()?.slice(0, 24) : undefined;
@@ -241,7 +241,7 @@ function showHeader(ctx: ExtensionContext, styleName: string): void {
     const s: HeaderState = {
       styleName,
       theme,
-      modelId,
+      modelName,
       leafId: leafId ? leafId.slice(-6) : undefined,
       sessionBasename,
     };
