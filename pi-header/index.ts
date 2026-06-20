@@ -160,7 +160,7 @@ class AsciiHeader implements Component {
 let currentStyleName = "symbol";
 let activeHeader: { close: () => void; requestRender: () => void } | undefined;
 
-export default function asciiHeaderExtension(pi: ExtensionAPI): void {
+export default function piHeaderExtension(pi: ExtensionAPI): void {
   // ── /header command ─────────────────────────────────────────────────────────
   pi.registerCommand("header", {
     description: "Manage header (style, show, clear)",
