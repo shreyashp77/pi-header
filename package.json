@@ -1,6 +1,6 @@
 {
-  "name": "@shreyashp77/pi-header",
-  "version": "0.1.0",
+  "name": "pi-header",
+  "version": "0.2.0",
   "description": "A pi coding agent extension that displays a styled ASCII art header with model info at the top of every new session.",
   "keywords": [
     "pi-package"
@@ -18,6 +18,6 @@
   "author": "Shreyash Pardikar <shreyashpardikar77@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shreyashp77/pi-header"
+    "url": "git+https://github.com/shreyashp77/pi-header.git"
   }
 }
