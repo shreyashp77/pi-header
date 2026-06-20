@@ -1,0 +1,23 @@
+{
+  "name": "@shreyashp77/pi-header",
+  "version": "0.1.0",
+  "description": "A pi coding agent extension that displays a styled ASCII art header with model info at the top of every new session.",
+  "keywords": [
+    "pi-package"
+  ],
+  "pi": {
+    "extensions": [
+      "./pi-header"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "license": "MIT",
+  "author": "Shreyash Pardikar <shreyashpardikar77@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shreyashp77/pi-header"
+  }
+}
